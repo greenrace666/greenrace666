@@ -1,0 +1,47 @@
+name: Update Profile README
+
+on:
+  schedule:
+    - cron: '0 */12 * * *' # runs every 12 hours
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run update script
+        run: python scripts/update_readme.py
+
+      - name: Generate contribution snake
+        uses: Platane/snk@v3
+        with:
+          github_user_name: greenrace666
+          outputs: |
+            assets/github-contribution-grid-snake.svg?palette=github-dark&color_snake=#00f2fe&color_dots=#161b22,#00444d,#006d7a,#0095a8,#00f2fe
+
+      - name: Commit and push if updated
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add README.md assets/github-contribution-grid-snake.svg
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-update profile README and contribution snake [skip ci]"
+            git push
+          fi

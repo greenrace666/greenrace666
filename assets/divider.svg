@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 40" width="100%" height="100%">
+  <defs>
+    <style>
+      .glow-line {
+        stroke: url(#dividerGrad);
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        opacity: 0.8;
+      }
+      
+      .molecule {
+        fill: #0d1117;
+        stroke-width: 1.5;
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-3px); }
+      }
+      
+      .floating {
+        animation: float 3s infinite ease-in-out;
+      }
+    </style>
+    
+    <linearGradient id="dividerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(0, 242, 254, 0)" />
+      <stop offset="15%" stop-color="rgba(0, 242, 254, 0.8)" />
+      <stop offset="50%" stop-color="rgba(184, 0, 255, 0.8)" />
+      <stop offset="85%" stop-color="rgba(255, 8, 68, 0.8)" />
+      <stop offset="100%" stop-color="rgba(255, 8, 68, 0)" />
+    </linearGradient>
+  </defs>
+
+  <!-- Line -->
+  <line x1="40" y1="20" x2="840" y2="20" class="glow-line" />
+
+  <!-- Molecule in the center -->
+  <g transform="translate(440, 20)" class="floating">
+    <!-- Benzene ring or similar bio-molecule representation -->
+    <polygon points="-12,-7 0,-14 12,-7 12,7 0,14 -12,7" fill="#0d1117" stroke="#b800ff" stroke-width="1.5" />
+    <circle cx="-12" cy="-7" r="3.5" fill="#00f2fe" />
+    <circle cx="0" cy="-14" r="3.5" fill="#ff0844" />
+    <circle cx="12" cy="-7" r="3.5" fill="#00f2fe" />
+    <circle cx="12" cy="7" r="3.5" fill="#ffb199" />
+    <circle cx="0" cy="14" r="3.5" fill="#50fa7b" />
+    <circle cx="-12" cy="7" r="3.5" fill="#ffb199" />
+  </g>
+</svg>

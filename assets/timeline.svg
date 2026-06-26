@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 280" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap');
+      
+      .title {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        fill: #ffffff;
+      }
+      
+      .subtitle {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 600;
+        font-size: 11px;
+        fill: #00f2fe;
+      }
+
+      .desc {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 400;
+        font-size: 11px;
+        fill: #98a6b8;
+      }
+      
+      .year {
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: 700;
+        font-size: 12px;
+        fill: #ffb199;
+      }
+
+      .bg {
+        fill: #0d1117;
+        stroke: rgba(255, 255, 255, 0.08);
+        stroke-width: 1.5;
+        rx: 16px;
+      }
+
+      .timeline-line {
+        stroke: rgba(255, 255, 255, 0.1);
+        stroke-width: 4;
+        stroke-linecap: round;
+      }
+
+      .timeline-progress {
+        stroke: url(#timelineGrad);
+        stroke-width: 4;
+        stroke-linecap: round;
+        stroke-dasharray: 800;
+        stroke-dashoffset: 0;
+      }
+
+      .timeline-node {
+        fill: #0d1117;
+        stroke-width: 3;
+      }
+
+      .node-pulse {
+        fill: none;
+        stroke-width: 1.5;
+      }
+
+      @keyframes pulse {
+        0% { r: 6px; opacity: 1; }
+        100% { r: 16px; opacity: 0; }
+      }
+
+      .pulse-1 { animation: pulse 2.5s infinite; }
+      .pulse-2 { animation: pulse 2.5s infinite 0.5s; }
+      .pulse-3 { animation: pulse 2.5s infinite 1s; }
+      .pulse-4 { animation: pulse 2.5s infinite 1.5s; }
+      .pulse-5 { animation: pulse 2.5s infinite 2s; }
+    </style>
+
+    <linearGradient id="timelineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="50%" stop-color="#b800ff" />
+      <stop offset="100%" stop-color="#ff0844" />
+    </linearGradient>
+
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e17" />
+      <stop offset="100%" stop-color="#161b22" />
+    </linearGradient>
+  </defs>
+
+  <rect width="880" height="280" fill="url(#bgGrad)" class="bg" />
+
+  <!-- Main timeline axis -->
+  <line x1="60" y1="140" x2="820" y2="140" class="timeline-line" />
+  <line x1="60" y1="140" x2="820" y2="140" class="timeline-progress" />
+
+  <!-- Node 1: 2022 - SASTRA B.Tech -->
+  <g transform="translate(100, 140)">
+    <circle r="14" class="node-pulse pulse-1" stroke="#00f2fe" />
+    <circle r="7" class="timeline-node" stroke="#00f2fe" fill="#0d1117" />
+    
+    <text x="0" y="-85" class="year" text-anchor="middle">2022</text>
+    <!-- Card Top -->
+    <rect x="-70" y="-75" width="140" height="55" rx="6" fill="#161b22" stroke="rgba(0, 242, 254, 0.2)" stroke-width="1" />
+    <text x="0" y="-60" class="title" text-anchor="middle">B.Tech Biotech</text>
+    <text x="0" y="-45" class="subtitle" text-anchor="middle">SASTRA University</text>
+    <text x="0" y="-30" class="desc" text-anchor="middle">Joined Undergrad</text>
+  </g>
+
+  <!-- Node 2: 2024 - Molecular Motors Lab -->
+  <g transform="translate(270, 140)">
+    <circle r="14" class="node-pulse pulse-2" stroke="#4facfe" />
+    <circle r="7" class="timeline-node" stroke="#4facfe" fill="#0d1117" />
+    
+    <text x="0" y="35" class="year" text-anchor="middle">06/2024</text>
+    <!-- Card Bottom -->
+    <rect x="-70" y="45" width="140" height="65" rx="6" fill="#161b22" stroke="rgba(79, 172, 254, 0.2)" stroke-width="1" />
+    <text x="0" y="60" class="title" text-anchor="middle">Researcher</text>
+    <text x="0" y="75" class="subtitle" text-anchor="middle">Mol. Motors Lab</text>
+    <text x="0" y="90" class="desc" text-anchor="middle">Genetic Algorithms</text>
+  </g>
+
+  <!-- Node 3: 2025 - IIT Dharwad -->
+  <g transform="translate(440, 140)">
+    <circle r="14" class="node-pulse pulse-3" stroke="#b800ff" />
+    <circle r="7" class="timeline-node" stroke="#b800ff" fill="#0d1117" />
+    
+    <text x="0" y="-85" class="year" text-anchor="middle">06/2025</text>
+    <!-- Card Top -->
+    <rect x="-70" y="-75" width="140" height="55" rx="6" fill="#161b22" stroke="rgba(184, 0, 255, 0.2)" stroke-width="1" />
+    <text x="0" y="-60" class="title" text-anchor="middle">Research Intern</text>
+    <text x="0" y="-45" class="subtitle" text-anchor="middle">IIT Dharwad</text>
+    <text x="0" y="-30" class="desc" text-anchor="middle">AI Drug Discovery</text>
+  </g>
+
+  <!-- Node 4: 2026 - Phage MDaaS -->
+  <g transform="translate(610, 140)">
+    <circle r="14" class="node-pulse pulse-4" stroke="#ff0844" />
+    <circle r="7" class="timeline-node" stroke="#ff0844" fill="#0d1117" />
+    
+    <text x="0" y="35" class="year" text-anchor="middle">01/2026</text>
+    <!-- Card Bottom -->
+    <rect x="-70" y="45" width="140" height="65" rx="6" fill="#161b22" stroke="rgba(255, 8, 68, 0.2)" stroke-width="1" />
+    <text x="0" y="60" class="title" text-anchor="middle">Founder</text>
+    <text x="0" y="75" class="subtitle" text-anchor="middle">Phage MDaaS</text>
+    <text x="0" y="90" class="desc" text-anchor="middle">MD Automation Web</text>
+  </g>
+
+  <!-- Node 5: 2026 - Capstone & GATE -->
+  <g transform="translate(780, 140)">
+    <circle r="14" class="node-pulse pulse-5" stroke="#ffb199" />
+    <circle r="7" class="timeline-node" stroke="#ffb199" fill="#0d1117" />
+    
+    <text x="0" y="-85" class="year" text-anchor="middle">04/2026</text>
+    <!-- Card Top -->
+    <rect x="-70" y="-75" width="140" height="55" rx="6" fill="#161b22" stroke="rgba(255, 177, 153, 0.2)" stroke-width="1" />
+    <text x="0" y="-60" class="title" text-anchor="middle">GATE AIR 14</text>
+    <text x="0" y="-45" class="subtitle" text-anchor="middle">bioRxiv Preprint</text>
+    <text x="0" y="-30" class="desc" text-anchor="middle">Thiamine Pathway</text>
+  </g>
+</svg>
