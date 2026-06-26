@@ -1,0 +1,263 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 340" width="100%" height="100%">
+  <defs>
+    <!-- Fonts -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap');
+      
+      .title {
+        font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-weight: 800;
+        font-size: 42px;
+        fill: #ffffff;
+        letter-spacing: -0.5px;
+      }
+      
+      .subtitle {
+        font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        fill: #00f2fe;
+        letter-spacing: 0.5px;
+      }
+      
+      .tagline {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 13px;
+        font-weight: 400;
+        fill: #a0aec0;
+      }
+
+      .badge {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        font-weight: 700;
+        fill: #00f2fe;
+      }
+
+      /* Animation keyframes */
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.8; }
+      }
+
+      @keyframes dnaRotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      @keyframes wave {
+        0% { transform: translateX(0) translateZ(0) scaleY(1); }
+        50% { transform: translateX(-25%) translateZ(0) scaleY(0.95); }
+        100% { transform: translateX(-50%) translateZ(0) scaleY(1); }
+      }
+
+      @keyframes dash {
+        to {
+          stroke-dashoffset: -40;
+        }
+      }
+
+      /* Base styles */
+      .glass-bg {
+        fill: #0d1117;
+        stroke: rgba(255, 255, 255, 0.08);
+        stroke-width: 1.5;
+        rx: 16px;
+      }
+
+      .grid-lines {
+        stroke: rgba(255, 255, 255, 0.02);
+        stroke-width: 1.5;
+      }
+
+      /* DNA Styles & Animations */
+      .dna-strand-1 {
+        fill: none;
+        stroke: url(#dnaGrad1);
+        stroke-width: 3.5;
+        stroke-linecap: round;
+      }
+
+      .dna-strand-2 {
+        fill: none;
+        stroke: url(#dnaGrad2);
+        stroke-width: 3.5;
+        stroke-linecap: round;
+      }
+
+      .dna-node-1 {
+        fill: #4facfe;
+        filter: drop-shadow(0 0 6px #00f2fe);
+      }
+
+      .dna-node-2 {
+        fill: #ff0844;
+        filter: drop-shadow(0 0 6px #ffb199);
+      }
+
+      .dna-link {
+        stroke: rgba(255, 255, 255, 0.25);
+        stroke-width: 1.5;
+        stroke-dasharray: 4, 4;
+      }
+
+      /* Protein ribbon styles */
+      .protein-ribbon {
+        fill: none;
+        stroke: url(#proteinGrad);
+        stroke-width: 5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.4));
+      }
+
+      .protein-secondary {
+        fill: none;
+        stroke: rgba(255, 8, 68, 0.15);
+        stroke-width: 18;
+        stroke-linecap: round;
+        filter: blur(4px);
+      }
+
+      .glow-orb {
+        filter: blur(40px);
+        opacity: 0.15;
+      }
+    </style>
+
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e17" />
+      <stop offset="100%" stop-color="#161b22" />
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#a0aec0" />
+    </linearGradient>
+
+    <linearGradient id="dnaGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#4facfe" />
+    </linearGradient>
+
+    <linearGradient id="dnaGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff0844" />
+      <stop offset="100%" stop-color="#ffb199" />
+    </linearGradient>
+
+    <linearGradient id="proteinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="50%" stop-color="#b800ff" />
+      <stop offset="100%" stop-color="#ff0844" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="880" height="340" fill="url(#bgGrad)" class="glass-bg" />
+
+  <!-- Background Grid -->
+  <g class="grid-lines">
+    <path d="M 40,0 L 40,340 M 80,0 L 80,340 M 120,0 L 120,340 M 160,0 L 160,340 M 200,0 L 200,340 M 240,0 L 240,340 M 280,0 L 280,340 M 320,0 L 320,340 M 360,0 L 360,340 M 400,0 L 400,340 M 440,0 L 440,340 M 480,0 L 480,340 M 520,0 L 520,340 M 560,0 L 560,340 M 600,0 L 600,340 M 640,0 L 640,340 M 680,0 L 680,340 M 720,0 L 720,340 M 760,0 L 760,340 M 800,0 L 800,340 M 840,0 L 840,340" />
+    <path d="M 0,40 L 880,40 M 0,80 L 880,80 M 0,120 L 880,120 M 0,160 L 880,160 M 0,200 L 880,200 M 0,240 L 880,240 M 0,280 L 880,280 M 0,320 L 880,320" />
+  </g>
+
+  <!-- Glowing Orbs (Scientific Theme) -->
+  <circle cx="750" cy="170" r="100" fill="#00f2fe" class="glow-orb" />
+  <circle cx="620" cy="100" r="70" fill="#ff0844" class="glow-orb" />
+  <circle cx="150" cy="250" r="80" fill="#4facfe" class="glow-orb" />
+
+  <!-- Left/Center Content (Builder Bio) -->
+  <g transform="translate(60, 95)">
+    <!-- Scientific Badge -->
+    <rect width="180" height="26" rx="13" fill="rgba(0, 242, 254, 0.08)" stroke="rgba(0, 242, 254, 0.3)" stroke-width="1" />
+    <circle cx="15" cy="13" r="5" fill="#00f2fe">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="30" y="17" class="badge">COMPUTATIONAL BIOLOGIST</text>
+
+    <!-- Name & Subtitles -->
+    <text x="0" y="70" class="title" fill="url(#textGrad)">Nikil Krishna</text>
+    <text x="0" y="105" class="subtitle">Structural Computational Biology &amp; MDaaS Builder</text>
+    <text x="0" y="140" class="tagline">Automating drug discovery pipelines, protein binder design, and molecular systems.</text>
+    
+    <!-- Console prompt mockup -->
+    <g transform="translate(0, 165)">
+      <rect width="450" height="34" rx="6" fill="#090d16" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1" />
+      <text x="15" y="21" font-family="'JetBrains Mono', monospace" font-size="11" fill="#4facfe">&gt;</text>
+      <text x="30" y="21" font-family="'JetBrains Mono', monospace" font-size="11" fill="#ffffff">pip install phage-md-service --pre</text>
+      <text x="340" y="21" font-family="'JetBrains Mono', monospace" font-size="11" fill="#50fa7b">✓ Active</text>
+    </g>
+  </g>
+
+  <!-- Animated Biology Visuals (DNA Helix + Protein Ribbon) -->
+  <g transform="translate(680, 170)">
+    <!-- Protein Ribbon Secondary structures in bg -->
+    <path class="protein-secondary" d="M -100,50 Q -70,-80 -40,-30 T 20,-40 T 80,60" />
+    
+    <!-- Active Protein Ribbon (wavy path simulating alpha-helix fold) -->
+    <path class="protein-ribbon" d="M -100,50 Q -70,-80 -40,-30 T 20,-40 T 80,60">
+      <animate attributeName="stroke-dasharray" values="1000;1000" dur="4s" repeatCount="indefinite" />
+      <!-- Subtle float -->
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="5s" repeatCount="indefinite" />
+    </path>
+
+    <!-- DNA Helix Animation -->
+    <g>
+      <!-- We render the DNA double helix vertical or diagonal. Let's make it diagonal -->
+      <!-- Strand 1 -->
+      <path class="dna-strand-1" d="M -80,-120 C -40,-80 0,-120 40,-80 C 80,-40 120,-80 160,-40">
+        <animate attributeName="d" 
+                 values="M -80,-120 C -40,-80 0,-120 40,-80 C 80,-40 120,-80 160,-40;
+                         M -80,-80 C -40,-120 0,-80 40,-120 C 80,-80 120,-120 160,-80;
+                         M -80,-120 C -40,-80 0,-120 40,-80 C 80,-40 120,-80 160,-40" 
+                 dur="6s" repeatCount="indefinite" />
+      </path>
+
+      <!-- Strand 2 -->
+      <path class="dna-strand-2" d="M -80,-80 C -40,-120 0,-80 40,-120 C 80,-80 120,-120 160,-80">
+        <animate attributeName="d" 
+                 values="M -80,-80 C -40,-120 0,-80 40,-120 C 80,-80 120,-120 160,-80;
+                         M -80,-120 C -40,-80 0,-120 40,-80 C 80,-40 120,-80 160,-40;
+                         M -80,-80 C -40,-120 0,-80 40,-120 C 80,-80 120,-120 160,-80" 
+                 dur="6s" repeatCount="indefinite" />
+      </path>
+
+      <!-- Rungs connecting the strands (base pairs) -->
+      <!-- We can simulate base pairs by drawing lines at specific x coordinates that animate their endpoints matching the strands -->
+      <line class="dna-link" x1="-60" y1="-100" x2="-60" y2="-100">
+        <animate attributeName="y1" values="-100;-100;-100" dur="6s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="-100;-100;-100" dur="6s" repeatCount="indefinite" />
+      </line>
+      
+      <!-- We can use beautiful circles for atoms revolving around the helix -->
+      <circle cx="-60" cy="-100" r="5" class="dna-node-1">
+        <animate attributeName="cy" values="-100;-100;-100" dur="6s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="-60" cy="-100" r="5" class="dna-node-2">
+        <animate attributeName="cy" values="-100;-100;-100" dur="6s" repeatCount="indefinite" />
+      </circle>
+
+      <!-- Floating atoms/molecules in the bio-theme -->
+      <g transform="translate(40, -130)">
+        <circle cx="0" cy="0" r="4" fill="#00f2fe" opacity="0.8">
+          <animate attributeName="transform" type="translate" values="0,0; 5,-10; 0,0" dur="3s" repeatCount="indefinite" />
+        </circle>
+        <line x1="0" y1="0" x2="15" y2="15" stroke="rgba(255,255,255,0.3)" stroke-width="1" />
+        <circle cx="15" cy="15" r="3" fill="#ff0844" opacity="0.8" />
+      </g>
+
+      <g transform="translate(-100, 20)">
+        <circle cx="0" cy="0" r="5" fill="#b800ff" opacity="0.6">
+          <animate attributeName="transform" type="translate" values="0,0; -8,8; 0,0" dur="4.5s" repeatCount="indefinite" />
+        </circle>
+      </g>
+    </g>
+  </g>
+</svg>

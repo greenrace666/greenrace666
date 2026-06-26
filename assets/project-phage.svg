@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 160" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap');
+      
+      .title {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+        fill: #ffffff;
+      }
+      
+      .desc {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 400;
+        font-size: 13px;
+        fill: #98a6b8;
+      }
+      
+      .tech {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        fill: #00f2fe;
+      }
+      
+      .status {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        fill: #50fa7b;
+      }
+
+      .card-bg {
+        fill: #0d1117;
+        stroke: rgba(255, 255, 255, 0.08);
+        stroke-width: 1.5;
+        rx: 12px;
+      }
+
+      .glow {
+        filter: blur(15px);
+        opacity: 0.15;
+      }
+    </style>
+    
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#4facfe" />
+    </linearGradient>
+  </defs>
+
+  <!-- Glowing background -->
+  <rect x="10" y="10" width="380" height="140" fill="url(#glowGrad)" class="glow" rx="12" />
+  
+  <!-- Base Card -->
+  <rect x="0" y="0" width="400" height="160" class="card-bg" />
+
+  <!-- Content -->
+  <g transform="translate(24, 28)">
+    <!-- Icon/Emblem -->
+    <rect width="36" height="36" rx="8" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.3)" stroke-width="1" />
+    <!-- Dynamic Protein icon representation -->
+    <path d="M 12,18 C 12,12 18,12 18,18 C 18,24 24,24 24,18" stroke="#00f2fe" stroke-width="2.5" stroke-linecap="round" fill="none" />
+    <circle cx="12" cy="18" r="3" fill="#ff0844" />
+    <circle cx="24" cy="18" r="3" fill="#50fa7b" />
+
+    <!-- Project Info -->
+    <text x="50" y="24" class="title">Phage</text>
+    <text x="310" y="22" class="status">● MDaaS</text>
+
+    <text x="0" y="62" class="desc">A Molecular Dynamics as a Service platform in an</text>
+    <text x="0" y="80" class="desc">interactive web interface. Production-grade scaling.</text>
+
+    <!-- Tech Stack Pill -->
+    <g transform="translate(0, 102)">
+      <rect width="352" height="24" rx="6" fill="#161b22" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1" />
+      <text x="12" y="16" class="tech">React • Supabase • Modal GPU • PyMOL</text>
+    </g>
+  </g>
+</svg>
